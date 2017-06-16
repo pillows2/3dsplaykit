@@ -1,2 +1,3 @@
-# 3dsplaykit
-ultimate starter pack for 3ds homebrew
+# Playkit
+Ultimate starter pack for 3DS homebrew
+[Website link](https://pillows2.github.io/3dsplaykit)
