@@ -2,9 +2,8 @@
 #include <3ds.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
-#include <sys/stat.h> 
-#include <sys/types.h> 
+#include "functions.h" 
+
 void moveCursor() {
 
 	if (hidKeysDown() & KEY_DOWN) {
@@ -22,12 +21,12 @@ void resetCursor(int min, int max) {
 	}
 }
 
-void printStatement(char* name, u64 cost, int place) {
+void printStatement(char* name, int place) {
 
-	if (cursor == place) {
-		printf("\x1b[%d;2H\x1b[40;33m>\x1b[0m %s: %llu \e[K\n")(, Install all apps, 3);
-	} else {
-		printf("\x1b[%d;2H  %s: %llu \e[K\n")(, Install games, 6;
-	}
+		if(cursor == place) {
+			printf("\x1b[%d;0H> %s", place, name);
+		} else {
+			printf("\x1b[%d;0H  %s", place, name);
+		}
 
 }
