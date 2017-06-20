@@ -30,10 +30,11 @@ int main()
 
 		consoleSelect(&topScreen);
 		
-		moveCursor();
-		resetCursor(5, 8);
 		
 		if (screen == 0) { // Home Screen
+		
+			moveCursor();
+			resetCursor(5, 8);
 		
 			printf("\x1b[1;12HWelcome to the 3DSPlaykit!\e[K\n");
 			printf("\x1b[2;6HUse the DPAD and A to make a selection\e[K\n");
