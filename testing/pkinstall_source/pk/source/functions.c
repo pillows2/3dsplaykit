@@ -33,7 +33,7 @@ void printStatement(char* name, int place) {
 
 void resetScreen() {
 
-	if (kDown & KEY_B) {
+	if (hidKeysDown() & KEY_B) {
 
 	screen = 0;
 	

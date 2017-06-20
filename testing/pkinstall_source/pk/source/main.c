@@ -68,10 +68,7 @@ int main()
 			moveCursor();
 			resetCursor(0,0);
 			printf("\x1b[1;12HEmpty Page Here\e[K\n");
-			printf("\x1b[2;12HPress B to go back.
-
-
-
+			printf("\x1b[2;12HPress B to go back.\e[K\n");
 
 		} else if (screen == 4) {
 			printf("\x1b[1;22Tools\e[K\n");
