@@ -30,3 +30,23 @@ void printStatement(char* name, int place) {
 		}
 
 }
+
+void resetScreen() {
+
+	if (kDown & KEY_B) {
+
+	screen = 0;
+	
+	printf("\x1b[1;0H                       ");
+	printf("\x1b[2;0H                       ");
+	printf("\x1b[3;0H                       ");
+	printf("\x1b[4;0H                       ");
+	printf("\x1b[5;0H                       ");
+	printf("\x1b[6;0H                       ");
+	printf("\x1b[7;0H                       ");
+	printf("\x1b[8;0H                       ");
+	printf("\x1b[9;0H                       ");
+
+	}
+
+}

@@ -7,5 +7,6 @@ extern int screen;
 void moveCursor();
 void resetCursor(int min, int max);
 void printStatement(char* name, int place);
+void resetScreen();
 
 #endif

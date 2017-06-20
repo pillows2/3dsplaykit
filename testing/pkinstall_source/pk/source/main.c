@@ -46,15 +46,15 @@ int main()
 		
 		
 			if((cursor == 5) & (kDown & KEY_A)) {
-				screen = 4;
+				screen = 1;
 				cursor = 0;
 				consoleClear();
 			} else if ((cursor = 6) & (kDown & KEY_A)) {
-				screen = 4; 
+				screen = 2; 
 				cursor = 0;
 				consoleClear();
 			} else if ((cursor = 7) & (kDown & KEY_A)) {
-				screen = 4;
+				screen = 3;
 				cursor = 0;
 				consoleClear();
 			} else if ((cursor = 8) & (kDown & KEY_A)) {
@@ -63,9 +63,20 @@ int main()
 				consoleClear();
 			}
 	
+		} else if (screen == 1) {
+			resetScreen();
+			moveCursor();
+			resetCursor(0,0);
+			printf("\x1b[1;12HEmpty Page Here\e[K\n");
+			printf("\x1b[2;12HPress B to go back.
+
+
+
+
 		} else if (screen == 4) {
 			printf("\x1b[1;22Tools\e[K\n");
 		
+			resetScreen();
 			resetCursor(5, 6);
 			moveCursor();
 			
