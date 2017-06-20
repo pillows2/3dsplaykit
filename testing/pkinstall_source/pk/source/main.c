@@ -43,6 +43,42 @@ int main()
 			printStatement("Emulators", 7);
 			printStatement("Tools", 8);
 		
+		
+			if((cursor == 5) & (kDown & KEY_A)) {
+				screen = 1;
+				cursor = 0;
+			} else if ((cursor = 6) & (kDown & KEY_A)) {
+				screen = 2; 
+				cursor = 0;
+			} else if ((cursor = 7) & (kDown & KEY_A)) {
+				screen = 3;
+				cursor = 0;
+			} else if ((cursor = 8) & (kDown & KEY_A)) {
+				screen = 4;
+				cursor = 0;
+			}
+			
+		} else if (screen == 1) {
+			printf("Incomplete, will not work. Unfunctional.");
+		} else if (screen == 2) {
+			printf("Incomplete, will not work.");
+		} else if (screen == 3) {
+			printf("Incomplete, will not work.");
+		} else if (screen == 4) {
+			printf("\x1b[1;22Tools\e[K\n");
+		
+			resetCursor(5, 6);
+			moveCursor();
+			
+			printStatement("1. JKSM", 5);
+			printStatement("2. FTPD II Turbo", 6);
+			
+			if ((cursor == 5) & (kDown & KEY_A)) {
+				downloadToFile("https://github.com/J-D-K/JKSM/blob/master/JKSM.3dsx?raw=true", "/3ds/JKSM/JKSM.3dsx");
+			} else if ((cursor == 6) & (kDown & KEY_A)) {
+				downloadToFile("https://github.com/mtheall/ftpd/releases/download/v2.2/ftpd.3dsx", "/3ds/FTPD/FTPD.3dsx");
+			}
+		
 		}
 		
 		
