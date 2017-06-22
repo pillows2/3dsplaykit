@@ -30,69 +30,59 @@ int main()
 
 		consoleSelect(&topScreen);
 		
-		
-		if (screen == 0) { // Home Screen
-		
+		if (screen == 0) {
 			moveCursor();
-			resetCursor(5, 8);
-		
+			resetCursor(5, 6);
+			
 			printf("\x1b[1;12HWelcome to the 3DSPlaykit!\e[K\n");
 			printf("\x1b[2;6HUse the DPAD and A to make a selection\e[K\n");
 			
-			printStatement("Full Install (Long install time)", 5);
-			printStatement("Games", 6);
-			printStatement("Emulators", 7);
-			printStatement("Tools", 8);
-		
-		
-			if((cursor == 5) & (kDown & KEY_A)) {
+			printStatement("Tools", 5);
+			printStatement("Misc", 6);
+			
+			if ((hidKeysDown() & KEY_A) & (cursor == 5)) {
 				screen = 1;
-				cursor = 0;
 				consoleClear();
-			} else if ((cursor = 6) & (kDown & KEY_A)) {
-				screen = 2; 
-				cursor = 0;
-				consoleClear();
-			} else if ((cursor = 7) & (kDown & KEY_A)) {
-				screen = 3;
-				cursor = 0;
-				consoleClear();
-			} else if ((cursor = 8) & (kDown & KEY_A)) {
-				screen = 4;
-				cursor = 0;
+			} else if ((hidKeysDown() & KEY_A) & (cursor == 6)) {
+				screen = 2;
 				consoleClear();
 			}
-	
+			
 		} else if (screen == 1) {
-			resetScreen();
-			moveCursor();
-			resetCursor(0,0);
-			printf("\x1b[1;12HEmpty Page Here\e[K\n");
-			printf("\x1b[2;12HPress B to go back.\e[K\n");
-
-		} else if (screen == 4) {
-			printf("\x1b[1;22Tools\e[K\n");
 		
-			resetScreen();
-			resetCursor(5, 6);
+			printf("\x1b[1;1HTools\e[K\n");
+		
 			moveCursor();
+			resetCursor(5, 6);
 			
 			printStatement("1. JKSM", 5);
-			printStatement("2. FTPD II Turbo", 6);
+			printStatement("2. FTPD", 6);
 			
-			if ((cursor == 5) & (kDown & KEY_A)) {
+			if ((hidKeysDown() & KEY_A) & (cursor == 5)) {
 				mkdir("/3ds/", 0777);
 				mkdir("/3ds/JKSM/", 0777);
 				downloadToFile("https://github.com/J-D-K/JKSM/blob/master/JKSM.3dsx?raw=true", "/3ds/JKSM/JKSM.3dsx");
-			} else if ((cursor == 6) & (kDown & KEY_A)) {
+				
+				break;
+			} else if ((hidKeysDown() & KEY_A) & (cursor == 6)) {
 				mkdir("/3ds/", 0777);
-				mkdir("/3ds/FTPD", 0777);
+				mkdir("/3ds/FTPD/", 0777);
 				downloadToFile("https://github.com/mtheall/ftpd/releases/download/v2.2/ftpd.3dsx", "/3ds/FTPD/FTPD.3dsx");
 			}
-		
+			
+			if (hidKeysDown() & KEY_B) {
+				screen = 0;
+			}
+			
+		} else if (screen == 2) {
+			
+			printf("\x1b[1;1HPress B\e[K\n");
+			
+			if (hidKeysDown() & KEY_B) {
+				screen = 0;
+			}
+			
 		}
-		
-		
 		
 
 		// Flush and swap frame-buffers
