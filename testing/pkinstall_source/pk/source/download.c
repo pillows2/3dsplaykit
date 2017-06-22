@@ -1,4 +1,5 @@
 #include "download.h"
+#include "functions.h"
 #include <3ds.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +9,6 @@ int setupContext(httpcContext * context, const char * url, u32 * size)
 {
 	Result ret = 0;
 	u32 statuscode = 0;
-	
 	ret = httpcOpenContext(context, HTTPC_METHOD_GET, url, 1);
 	if (ret != 0) {
 		printf("Error in:\nhttpcOpenContext\n");
@@ -153,5 +153,8 @@ int downloadToFile(const char * url, const char * filepath)
 		return ret;
 	}
 	
+	resetScreen();
+	
 	return 0;
+	
 }

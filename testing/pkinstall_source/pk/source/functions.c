@@ -14,10 +14,10 @@ void moveCursor() {
 }
 
 void resetCursor(int min, int max) {
-	if (cursor > max) {
-		cursor = max;
-	} else if (cursor < min) {
+	if (cursor < min) {
 		cursor = min;
+	} else if (cursor > max) {
+		cursor = max;
 	}
 }
 
@@ -33,20 +33,33 @@ void printStatement(char* name, int place) {
 
 void resetScreen() {
 
-	if (hidKeysDown() & KEY_B) {
-
-	screen = 0;
-	
-	printf("\x1b[1;0H                       ");
-	printf("\x1b[2;0H                       ");
-	printf("\x1b[3;0H                       ");
-	printf("\x1b[4;0H                       ");
-	printf("\x1b[5;0H                       ");
-	printf("\x1b[6;0H                       ");
-	printf("\x1b[7;0H                       ");
-	printf("\x1b[8;0H                       ");
-	printf("\x1b[9;0H                       ");
-
-	}
+	printf("\x1b[0;0H                                                ");
+	printf("\x1b[1;0H                                                ");
+	printf("\x1b[2;0H                                                ");
+	printf("\x1b[3;0H                                                ");
+	printf("\x1b[4;0H                                                ");
+	printf("\x1b[5;0H                                                ");
+	printf("\x1b[6;0H                                                ");
+	printf("\x1b[7;0H                                                ");
+	printf("\x1b[8;0H                                                ");
+	printf("\x1b[9;0H                                                ");
+	printf("\x1b[10;0H                                                ");
+	printf("\x1b[11;0H                                                ");
+	printf("\x1b[12;0H                                                ");
+	printf("\x1b[13;0H                                                ");
+	printf("\x1b[14;0H                                                ");
+	printf("\x1b[15;0H                                                ");
+	printf("\x1b[16;0H                                                ");
+	printf("\x1b[17;0H                                                ");
+	printf("\x1b[18;0H                                                ");
+	printf("\x1b[19;0H                                                ");
+	printf("\x1b[20;0H                                                ");
+	printf("\x1b[21;0H                                                ");
+	printf("\x1b[22;0H                                                ");
+	printf("\x1b[23;0H                                                ");
+	printf("\x1b[24;0H                                                ");
+	printf("\x1b[25;0H                                                ");
+	printf("\x1b[26;0H                                                ");
+	printf("\x1b[27;0H                                                ");
 
 }
