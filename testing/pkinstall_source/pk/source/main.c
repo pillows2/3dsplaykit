@@ -38,7 +38,7 @@ int main()
 			printf("\x1b[2;6HUse the DPAD and A to make a selection\e[K\n");
 			
 			printStatement("Tools", 5);
-			printStatement("Misc", 6);
+			printStatement("Games", 6);
 			
 			if ((hidKeysDown() & KEY_A) & (cursor == 5)) {
 				screen = 1;
@@ -106,8 +106,49 @@ int main()
 		} else if (screen == 2) {
 			
 			if (screen == 2) { //Text fragments occur without this
-				printf("\x1b[1;1HPress B\e[K\n");
+				printf("\x1b[1;1HGames\e[K\n");
 			}
+			
+			moveCursor();
+			resetCursor(5, 9);
+			
+			printStatement("1. 2048-3D", 5);
+			printStatement("2. 3DSPaint", 6);
+			printStatement("3. Cookie Collector 3DS", 7);
+			printStatement("4. Super Haxagon", 8);
+			printStatement("5. Install All", 9);
+			
+			if ((cursor == 5) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/2048-3D", 0777);
+				downloadToFile("https://github.com/MrJPGames/2048-3D/blob/master/2048-3D.3dsx?raw=true", "/3ds/2048-3D/2048-3D.3dsx");
+			} else if ((cursor == 6) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/3DSPaint", 0777);
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/3DS_Paint.3dsx?raw=true", "/3ds/3DSPaint/3DSPaint.3DSX");
+			} else if ((cursor == 7) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/CookieCollector3DS", 0777);
+				downloadToFile("https://github.com/Kaisogen/CookieCollector-3DS-/releases/download/v1.6.0/CookieCollector3DS.3dsx", "/3ds/CookieCollector3DS/CookieCollector3DS.3dsx");
+			} else if ((cursor == 8) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/SuperHaxagon/", 0777);
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/SuperHaxagon.3dsx?raw=true", "/3ds/SuperHaxagon/SuperHaxagon.3dsx");
+			} else if ((cursor == 9) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/2048-3D", 0777);
+				mkdir("/3ds/3DSPaint", 0777);
+				mkdir("/3ds/CookieCollector3DS", 0777);
+				mkdir("/3DS/SuperHaxagon", 0777);
+				consoleSelect(&bottomScreen);
+				downloadToFile("https://github.com/MrJPGames/2048-3D/blob/master/2048-3D.3dsx?raw=true", "/3ds/2048-3D/2048-3D.3dsx");
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/3DS_Paint.3dsx?raw=true", "/3ds/3DSPaint/3DSPaint.3DSX");
+				downloadToFile("https://github.com/Kaisogen/CookieCollector-3DS-/releases/download/v1.6.0/CookieCollector3DS.3dsx", "/3ds/CookieCollector3DS/CookieCollector3DS.3dsx");
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/SuperHaxagon.3dsx?raw=true", "/3ds/SuperHaxagon/SuperHaxagon.3dsx");
+				consoleSelect(&topScreen);
+			}
+			
+			
 			
 			if (hidKeysDown() & KEY_B) {
 				screen = 0;
