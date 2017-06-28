@@ -32,19 +32,23 @@ int main()
 		
 		if (screen == 0) {
 			moveCursor();
-			resetCursor(5, 6);
+			resetCursor(5, 7);
 			
 			printf("\x1b[1;12HWelcome to the 3DSPlaykit!\e[K\n");
 			printf("\x1b[2;6HUse the DPAD and A to make a selection\e[K\n");
 			
 			printStatement("Tools", 5);
 			printStatement("Games", 6);
+			printStatement("Emulators", 7);
 			
 			if ((hidKeysDown() & KEY_A) & (cursor == 5)) {
 				screen = 1;
 				resetScreen();
 			} else if ((hidKeysDown() & KEY_A) & (cursor == 6)) {
 				screen = 2;
+				resetScreen();
+			} else if ((hidKeysDown() & KEY_A) & (cursor == 7)) {
+				screen = 3;
 				resetScreen();
 			}
 			
@@ -155,6 +159,31 @@ int main()
 				resetScreen();
 			}
 			
+		} else if (screen == 3) {
+			moveCursor();
+			resetCursor(5, 6);
+			
+			printStatement("1. Retroarch", 5);
+			printStatement("2. Filler", 6);
+		
+			if (hidKeysDown() & KEY_B) {
+				screen = 0;
+				resetScreen();
+			}
+			if (screen == 3) { //Text fragments occur without this
+				printf("\x1b[1;1HEmulators\e[K\n");
+			}
+			
+			if ((cursor == 5) & (kDown & KEY_A)) {
+			
+				break;
+				
+			} else if ((cursor == 6) & (kDown & KEY_A)) {
+				
+				
+				break;
+			}
+		
 		}
 		
 
