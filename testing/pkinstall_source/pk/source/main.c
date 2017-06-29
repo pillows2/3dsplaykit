@@ -163,8 +163,8 @@ int main()
 			moveCursor();
 			resetCursor(5, 6);
 			
-			printStatement("1. Retroarch", 5);
-			printStatement("2. Filler", 6);
+			printStatement("1. Snes9X", 5);
+			printStatement("2. Nestopia", 6);
 		
 			if (hidKeysDown() & KEY_B) {
 				screen = 0;
@@ -175,8 +175,9 @@ int main()
 			}
 			
 			if ((cursor == 5) & (kDown & KEY_A)) {
-			
-				break;
+				mkdir("/3ds/"
+				mkdir("/3ds/SNES9X");
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
 				
 			} else if ((cursor == 6) & (kDown & KEY_A)) {
 				
