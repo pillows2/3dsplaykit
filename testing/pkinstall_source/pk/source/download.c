@@ -80,7 +80,6 @@ int setupContext(httpcContext * context, const char * url, u32 * size)
 			free(domainname);
 		}
 		
-		printf("Redirecting to url:\n%s\n", newurl);
 		ret = setupContext(context, newurl, size);
 		free(newurl);
 		return ret;
@@ -105,16 +104,12 @@ int setupContext(httpcContext * context, const char * url, u32 * size)
 int downloadToFile(const char * url, const char * filepath)
 {
 	if (url == NULL) {
-		printf("Download cannot start, the URL in config.json is blank.\n");
 		return 1;
 	}
 	
 	if (filepath == NULL) {
-		printf("Download cannot start, file path in config.json is blank.\n");
 		return 1;
 	}
-	
-	printf("Downloading file from:\n%s\nto:\n%s\n", url, filepath);
 	
 	httpcContext context;
 	Result ret = 0;
@@ -123,7 +118,6 @@ int downloadToFile(const char * url, const char * filepath)
 	ret = setupContext(&context, url, &contentsize);
 	if (ret != 0) return ret;
 	
-	printf("Downloading %lu bytes...\n", contentsize);
 	
 	FILE * fh = fopen(filepath, "wb");
 	if (fh == NULL) {
@@ -142,7 +136,6 @@ int downloadToFile(const char * url, const char * filepath)
 		ret = httpcDownloadData(&context, buf, 0x1000, &readsize);
 		fwrite(buf, 1, readsize, fh);
 	} while (ret == (Result)HTTPC_RESULTCODE_DOWNLOADPENDING);
-	printf("Download took %llu milliseconds.\n", osGetTime()-startTime);
 	
 	free(buf);
 	fclose(fh);
