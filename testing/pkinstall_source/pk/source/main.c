@@ -32,7 +32,7 @@ int main()
 		
 		if (screen == 0) {
 			moveCursor();
-			resetCursor(5, 7);
+			resetCursor(5, 8);
 			
 			printf("\x1b[1;12HWelcome to the 3DSPlaykit!\e[K\n");
 			printf("\x1b[2;6HUse the DPAD and A to make a selection\e[K\n");
@@ -40,6 +40,7 @@ int main()
 			printStatement("Tools", 5);
 			printStatement("Games", 6);
 			printStatement("Emulators", 7);
+			printStatement("Install All (Long Wait)", 8);
 			
 			if ((hidKeysDown() & KEY_A) & (cursor == 5)) {
 				screen = 1;
@@ -49,6 +50,9 @@ int main()
 				resetScreen();
 			} else if ((hidKeysDown() & KEY_A) & (cursor == 7)) {
 				screen = 3;
+				resetScreen();
+			} else if ((hidKeysDown() & KEY_A) & (cursor == 8)) {
+				downloadAll();
 				resetScreen();
 			}
 			
