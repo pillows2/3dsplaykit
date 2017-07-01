@@ -4,4 +4,5 @@
 
 int downloadToFile(const char * url, const char * filepath);
 int setupContext(httpcContext * context, const char * url, u32 * size);
+void downloadAll();
 #endif
