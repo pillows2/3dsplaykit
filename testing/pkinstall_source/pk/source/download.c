@@ -153,8 +153,9 @@ int downloadToFile(const char * url, const char * filepath)
 }
 
 void downloadAll () {
-
 	mkdir("/3ds/", 0777);
+	
+	//Tools	
 	mkdir("/3ds/JKSM/", 0777);
 	mkdir("/3ds/FTPD/", 0777);
 	mkdir("/3ds/Notepad3DS", 0777);
@@ -165,8 +166,7 @@ void downloadAll () {
 	downloadToFile("https://github.com/RMcTn/Notepad3DS/releases/download/v1.1/notepad3DS.3dsx", "/3ds/Notepad3DS/Notepad3DS.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/ctrmus.3dsx?raw=true", "/3ds/CTRMUS/CTRMUS.3dsx");
 
-
-	mkdir("/3ds/", 0777);
+	//Games
 	mkdir("/3ds/2048-3D", 0777);
 	mkdir("/3ds/3DSPaint", 0777);
 	mkdir("/3ds/CookieCollector3DS", 0777);
@@ -177,7 +177,7 @@ void downloadAll () {
 	downloadToFile("https://github.com/Kaisogen/CookieCollector-3DS-/releases/download/v1.6.0/CookieCollector3DS.3dsx", "/3ds/CookieCollector3DS/CookieCollector3DS.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/SuperHaxagon.3dsx?raw=true", "/3ds/SuperHaxagon/SuperHaxagon.3dsx");
 				
-	mkdir("/3ds/"
+	//Emulators
 	mkdir("/3ds/SNES9X");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
 				
