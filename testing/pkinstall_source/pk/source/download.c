@@ -160,12 +160,13 @@ void downloadAll () {
 	mkdir("/3ds/FTPD/", 0777);
 	mkdir("/3ds/Notepad3DS", 0777);
 	mkdir("/3ds/CTRMus", 0777);
+	mkdir("/3ds/CTRXplorer", 0777);
 	consoleSelect(&bottomScreen);
 	downloadToFile("https://github.com/J-D-K/JKSM/blob/master/JKSM.3dsx?raw=true", "/3ds/JKSM/JKSM.3dsx");
 	downloadToFile("https://github.com/mtheall/ftpd/releases/download/v2.2/ftpd.3dsx", "/3ds/FTPD/FTPD.3dsx");
 	downloadToFile("https://github.com/RMcTn/Notepad3DS/releases/download/v1.1/notepad3DS.3dsx", "/3ds/Notepad3DS/Notepad3DS.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/ctrmus.3dsx?raw=true", "/3ds/CTRMUS/CTRMUS.3dsx");
-
+	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/CTRXplorer.3dsx?raw=true", "/3ds/CTRXplorer/CTRXplorer.sdmh");
 	//Games
 	mkdir("/3ds/2048-3D", 0777);
 	mkdir("/3ds/3DSPaint", 0777);
