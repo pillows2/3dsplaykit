@@ -21,4 +21,4 @@ To download an application, simply hover over the selection using the arrow keys
 
 # License
 
-Under officially distributed packages, the source is not required to be included with a download. When hosting on other platforms not officially supported, you must include the source at all times, with a copy of this README.md file.
+Under officially distributed packages, the source is not required to be included with a download. When hosting on other platforms not officially supported, you must include the source at all times, with a copy of this README.md file. You are allowed to fork and change this software freely, as long as you properly present you as not the original author of this software. All forks must contain a link to the original github repo and/or folder, at "https://github.com/pillows2/3dsplaykit/master/testing/pkinstall_source/". Properly conducted Github forks are exempt from this requirement since github naturally points forks to the original author.
