@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h> 
+#include <sys/types.h> 
 
 int setupContext(httpcContext * context, const char * url, u32 * size)
 {
@@ -161,7 +163,6 @@ void downloadAll () {
 	mkdir("/3ds/Notepad3DS", 0777);
 	mkdir("/3ds/CTRMus", 0777);
 	mkdir("/3ds/CTRXplorer", 0777);
-	consoleSelect(&bottomScreen);
 	downloadToFile("https://github.com/J-D-K/JKSM/blob/master/JKSM.3dsx?raw=true", "/3ds/JKSM/JKSM.3dsx");
 	downloadToFile("https://github.com/mtheall/ftpd/releases/download/v2.2/ftpd.3dsx", "/3ds/FTPD/FTPD.3dsx");
 	downloadToFile("https://github.com/RMcTn/Notepad3DS/releases/download/v1.1/notepad3DS.3dsx", "/3ds/Notepad3DS/Notepad3DS.3dsx");
@@ -172,14 +173,14 @@ void downloadAll () {
 	mkdir("/3ds/3DSPaint", 0777);
 	mkdir("/3ds/CookieCollector3DS", 0777);
 	mkdir("/3DS/SuperHaxagon", 0777);
-	consoleSelect(&bottomScreen);
+
 	downloadToFile("https://github.com/MrJPGames/2048-3D/blob/master/2048-3D.3dsx?raw=true", "/3ds/2048-3D/2048-3D.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/3DS_Paint.3dsx?raw=true", "/3ds/3DSPaint/3DSPaint.3DSX");
 	downloadToFile("https://github.com/Kaisogen/CookieCollector-3DS-/releases/download/v1.6.0/CookieCollector3DS.3dsx", "/3ds/CookieCollector3DS/CookieCollector3DS.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/SuperHaxagon.3dsx?raw=true", "/3ds/SuperHaxagon/SuperHaxagon.3dsx");
 				
 	//Emulators
-	mkdir("/3ds/SNES9X");
+	mkdir("/3ds/SNES9X", 0777);
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
 				
 	
