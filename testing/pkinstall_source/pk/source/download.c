@@ -178,10 +178,12 @@ void downloadAll () {
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/3DS_Paint.3dsx?raw=true", "/3ds/3DSPaint/3DSPaint.3DSX");
 	downloadToFile("https://github.com/Kaisogen/CookieCollector-3DS-/releases/download/v1.6.0/CookieCollector3DS.3dsx", "/3ds/CookieCollector3DS/CookieCollector3DS.3dsx");
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/SuperHaxagon.3dsx?raw=true", "/3ds/SuperHaxagon/SuperHaxagon.3dsx");
-				
+	
 	//Emulators
 	mkdir("/3ds/SNES9X", 0777);
+	mkdir("/3ds/NESTopia", 0777);
 	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
+	downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/nestopia_libretro.3dsx?raw=true", "/3ds/NESTopia/NESTopia.3dsx");
 				
 	
 }
