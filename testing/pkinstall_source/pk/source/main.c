@@ -175,10 +175,11 @@ int main()
 			
 		} else if (screen == 3) {
 			moveCursor();
-			resetCursor(5, 6);
+			resetCursor(5, 7);
 			
 			printStatement("1. Snes9X", 5);
 			printStatement("2. Nestopia", 6);
+			printStatement("4. Download All", 7);
 		
 			if (hidKeysDown() & KEY_B) {
 				screen = 0;
@@ -191,12 +192,23 @@ int main()
 			if ((cursor == 5) & (kDown & KEY_A)) {
 				mkdir("/3ds/", 0777);
 				mkdir("/3ds/SNES9X", 0777);
+				consoleSelect(&bottomScreen);
 				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
-				
+				consoleSelect(&topScreen);
 			} else if ((cursor == 6) & (kDown & KEY_A)) {
-				
-				
-				break;
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/NESTopia/", 0777);
+				consoleSelect(&bottomScreen);
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/nestopia_libretro.3dsx?raw=true", "/3ds/NESTopia/NESTopia.3dsx");
+				consoleSelect(&topScreen);
+			} else if ((cursor == 7) & (kDown & KEY_A)) {
+				mkdir("/3ds/", 0777);
+				mkdir("/3ds/NESTopia/", 0777);
+				mkdir("/3ds/SNES9X/", 0777);
+				consoleSelect(&bottomScreen);
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/snes9x_3ds.3dsx?raw=true", "/3ds/SNES9X/SNES9X.3dsx");
+				downloadToFile("https://github.com/pillows2/pkinstall/blob/master/download/nestopia_libretro.3dsx?raw=true", "/3ds/NESTopia/NESTopia.3dsx");
+				consoleSelect(&topScreen);
 			}
 		
 		}
