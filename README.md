@@ -4,7 +4,7 @@ Ultimate starter pack for 3DS homebrew.
 
 # Collection
 
-3DSPlayKit includes emulators, games, tools, and more. You can either download a ziped package, with everything all at once, or use a singular 3DSX to download everything at once.
+3DSPlayKit includes emulators, games, tools, and more. You can either download a zipped package, with all tools included. Or use a 3DSX to download homebrew directly from the package.
 
 # Credits
 
