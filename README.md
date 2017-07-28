@@ -8,10 +8,14 @@ Ultimate starter pack for 3DS homebrew.
 
 # Credits
 
-*Pillows2*: Website Design and Original Concept
+*Pillows2*: Website Design, Original Concept, list compiler and designer of the icons and descriptions
 
 *Kaisogen*: Creator of PK Install
 
 *LiquidFenrir*: Creator of Download code used in PK_Install
 
 And, last but definitely not least, *every single dev of the software we've included here*.
+
+# Updates
+July 28, 2017 - pillows2
+I've been SUPER busy recently and I am going to be doing an overhaul of the kit, and including PK Install in it.
